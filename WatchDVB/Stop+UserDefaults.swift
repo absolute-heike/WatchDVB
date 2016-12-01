@@ -33,8 +33,8 @@ extension Stop {
         let region = dict["region"]! as! String
         let searchString = dict["searchString"]! as! String
         let tarifZones = dict["tarifZones"]! as! String
-        let lon = Double(dict["longitude"]! as! String)!
-        let lat = Double(dict["latitude"]! as! String)!
+        let lon = Double(dict["longitude"] as? String ?? "") ?? 0.0
+        let lat = Double(dict["latitude"] as? String ?? "") ?? 0.0
 
         return Stop(id: 0, name: name, region: region, searchString: searchString, tarifZones: tarifZones, longitude: lon, latitude: lat, priority: 0)
     }
