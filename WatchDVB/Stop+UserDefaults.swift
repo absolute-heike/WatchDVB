@@ -75,7 +75,7 @@ extension Stop {
     static func selectedIndex() -> Int {
         let all = allSaved()
         let selectedStopName = UserDefaults.standard.string(forKey: Defaults.selectedStopName)
-        return all.index { $0.name == selectedStopName } ?? -1
+        return all.index { $0.name == selectedStopName } ?? 0
     }
 
     static func selected() -> Stop {
